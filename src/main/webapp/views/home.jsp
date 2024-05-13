@@ -35,6 +35,9 @@
                 <a class="nav-link" href="category">Quản lý danh mục</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="product">Quản lý sản phẩm</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="user">User</a>
             </li>
             <li class="nav-item dropdown">

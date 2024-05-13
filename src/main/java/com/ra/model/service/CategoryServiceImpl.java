@@ -14,4 +14,25 @@ public class CategoryServiceImpl implements CategoryService{
     public List<Category> getAll() {
         return categoryDAO.getAll();
     }
+
+    @Override
+    public Boolean add(Category category) {
+        return categoryDAO.save(category);
+    }
+
+    @Override
+    public Category findById(Integer id) {
+        return categoryDAO.findById(id);
+    }
+
+    @Override
+    public Boolean update(Category category) {
+        return categoryDAO.save(category);
+    }
+
+    @Override
+    public Boolean delete(Integer id) {
+        return categoryDAO.delete(id);
+    }
+
 }

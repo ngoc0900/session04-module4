@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface UserDAO {
     List<User> getAll();
+    Boolean add(User user);
 }

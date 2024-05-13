@@ -2,11 +2,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: nguyenhongngoc
-  Date: 2024/05/07
-  Time: 21:10
+  Date: 2024/05/13
+  Time: 21:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,14 +33,16 @@
                     <strong>${success}</strong>
                 </div>
             </c:if>
-            <h1>Danh sách danh mục</h1>
+            <h1>Danh sách sản phẩm</h1>
             <table class="table">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Tên sản phẩm</th>
                     <th>Miêu tả</th>
-                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Danh mục</th>
+                    <th>Số lượng</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -49,6 +52,8 @@
                         <td scope="row">${category.id}</td>
                         <td>${category.categoryName}</td>
                         <td>${category.description}</td>
+                        <td></td>
+                        <td></td>
                         <td>${category.status ? 'Hiện' : 'Ẩn'}</td>
                         <td>
                             <a class="btn btn-primary" href="/edit-category/${category.id}">Edit</a>
@@ -59,7 +64,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <a href="add-category" class="btn btn-success">Thêm mới</a>
+            <a href="add-product" class="btn btn-success">Thêm mới</a>
         </div>
     </div>
 </div>

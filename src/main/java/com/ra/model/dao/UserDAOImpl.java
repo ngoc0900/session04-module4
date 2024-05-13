@@ -25,4 +25,20 @@ public class UserDAOImpl implements UserDAO{
         }
         return users;
     }
+
+    @Override
+    public Boolean add(User user) {
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.saveOrUpdate(user);
+            session.getTransaction().commit();
+            return true;
+        }catch (Exception e){
+            session.getTransaction().rollback();
+        }finally {
+            session.close();
+        }
+        return false;
+    }
 }

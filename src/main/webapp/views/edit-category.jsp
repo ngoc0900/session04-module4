@@ -1,13 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: nguyenhongngoc
-  Date: 2024/05/07
-  Time: 23:12
+  Date: 2024/05/11
+  Time: 21:09
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,35 +24,35 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <h1>Danh sách User</h1>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Birthday</th>
-                    <th>Sex</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${users}" var="user">
-                    <tr>
-                        <td scope="row">${user.id}</td>
-                        <td>${user.fullName}</td>
-                        <td>${user.email}</td>
-                        <td><fmt:formatDate pattern = "dd-MM-yyyy"
-                                            value = "${user.birthday}" /></td>
-                        <td>${user.sex ? 'Nữ' : 'Nam'}</td>
-                    </tr>
-                </c:forEach>
+        <div class="col-lg-6">
+            <h1>Sửa danh mục</h1>
+            <f:form method="post" action="" modelAttribute="category">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <f:input type="text" class="form-control"   id="exampleInputEmail1" path="categoryName"/>
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <f:input type="text" class="form-control"  id="Description" path="description"/>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <f:radiobutton class="form-check-input" value="1" path="status"/> Display
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <f:radiobutton class="form-check-input" value="0" path="status"/> Hidden
+                        </label>
+                    </div>
+                </div>
 
-                </tbody>
-            </table>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </f:form>
         </div>
     </div>
-    <a href="add-user" class="btn btn-success">Thêm mới</a>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -15,4 +15,10 @@ public class UserServiceImpl implements UserService {
         return userDAO.getAll();
     }
 
+    @Override
+    public Boolean add(User user) {
+        return userDAO.add(user);
+    }
+
+
 }
